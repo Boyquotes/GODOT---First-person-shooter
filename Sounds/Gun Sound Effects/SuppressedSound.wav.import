@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SuppressedSound.wav-c7900120400fd79d1f99788730d01f16.sample"
+
+[deps]
+
+source_file="res://Sounds/Gun Sound Effects/SuppressedSound.wav"
+dest_files=[ "res://.import/SuppressedSound.wav-c7900120400fd79d1f99788730d01f16.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

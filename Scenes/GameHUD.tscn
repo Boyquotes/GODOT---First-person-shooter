@@ -1,0 +1,1177 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://GameTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Images/Background.png" type="Texture" id=2]
+[ext_resource path="res://Images/Enemy.png" type="Texture" id=3]
+[ext_resource path="res://Images/Team.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/GameHUD.gd" type="Script" id=5]
+[ext_resource path="res://Images/GameHUDBackground.png" type="Texture" id=6]
+[ext_resource path="res://Images/CrossHairSide.png" type="Texture" id=7]
+[ext_resource path="res://Images/FallDamage-720P.png" type="Texture" id=8]
+[ext_resource path="res://Images/Satamina.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/FPS_Label.gd" type="Script" id=10]
+[ext_resource path="res://Images/HealthDamage.png" type="Texture" id=12]
+[ext_resource path="res://Images/CrossHairUp.png" type="Texture" id=13]
+[ext_resource path="res://Fonts/Roboto/Roboto-Regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Scenes/PlayerBoard.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/UserInfo.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Leaderboard.gd" type="Script" id=17]
+
+[sub_resource type="DynamicFont" id=1]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+font_data = ExtResource( 14 )
+
+[sub_resource type="Animation" id=4]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Hit Marker1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.533333, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hit Marker2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.533333, 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hit Marker3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.533333, 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Hit Marker4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.533333, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.137
+step = 0.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Hit Marker1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.134954 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.533333, 0, 0, 1 ), Color( 0.533333, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hit Marker2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.134954 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.533333, 0, 0, 1 ), Color( 0.552941, 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hit Marker3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.134954 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.533333, 0, 0, 1 ), Color( 0.533333, 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Hit Marker4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.134954 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.533333, 0, 0, 1 ), Color( 0.533333, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CrossHairHorizontal1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CrossHairHorizontal2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CrossHairVertical1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CrossHairVertical2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Dot:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CrossHairHorizontal1:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -30, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CrossHairHorizontal2:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 30, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CrossHairVertical1:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -30 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CrossHairVertical2:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 30 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CrossHairHorizontal1:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CrossHairHorizontal2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CrossHairVertical1:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CrossHairVertical2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CrossHairHorizontal1:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -50, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CrossHairHorizontal2:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 50, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CrossHairVertical1:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -50 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CrossHairVertical2:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 50 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CrossHairHorizontal1:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CrossHairHorizontal2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CrossHairVertical1:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CrossHairVertical2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "Sprint"
+
+[sub_resource type="AnimationNodeTransition" id=11]
+input_count = 3
+xfade_time = 0.1
+input_0/name = "Sprint"
+input_0/auto_advance = false
+input_1/name = "Static"
+input_1/auto_advance = false
+input_2/name = "Walking"
+input_2/auto_advance = false
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Static"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "Walking"
+
+[sub_resource type="AnimationNodeBlendTree" id=14]
+graph_offset = Vector2( -109, -12 )
+nodes/Animation/node = SubResource( 10 )
+nodes/Animation/position = Vector2( 380, 20 )
+nodes/Crosshair/node = SubResource( 11 )
+nodes/Crosshair/position = Vector2( 620, 60 )
+nodes/Static/node = SubResource( 12 )
+nodes/Static/position = Vector2( 380, 120 )
+nodes/Walking/node = SubResource( 13 )
+nodes/Walking/position = Vector2( 380, 220 )
+nodes/output/position = Vector2( 800, 60 )
+node_connections = [ "output", 0, "Crosshair", "Crosshair", 0, "Animation", "Crosshair", 1, "Static", "Crosshair", 2, "Walking" ]
+
+[sub_resource type="DynamicFont" id=15]
+size = 15
+outline_size = 1
+outline_color = Color( 0.533333, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 15
+outline_size = 1
+outline_color = Color( 0, 0.407843, 0.843137, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=17]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="Theme" id=18]
+default_font = SubResource( 17 )
+
+[node name="GameHUD" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="Scoreboard" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameHUDBackground" type="Sprite" parent="Scoreboard"]
+position = Vector2( 797, 32.43 )
+scale = Vector2( 1.2, 1 )
+texture = ExtResource( 6 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Scoreboard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -838.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Scoreboard/CenterContainer"]
+margin_left = 780.0
+margin_top = 21.0
+margin_right = 820.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+text = "10:00"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Scoreboard/CenterContainer"]
+margin_left = 416.0
+margin_top = 21.0
+margin_right = 1184.0
+margin_bottom = 41.0
+custom_constants/separation = 50
+
+[node name="TeamPoints" type="Label" parent="Scoreboard/CenterContainer/HBoxContainer"]
+margin_right = 9.0
+margin_bottom = 19.0
+theme = ExtResource( 1 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Team" type="TextureProgress" parent="Scoreboard/CenterContainer/HBoxContainer"]
+margin_left = 59.0
+margin_right = 359.0
+margin_bottom = 20.0
+value = 1.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy" type="TextureProgress" parent="Scoreboard/CenterContainer/HBoxContainer"]
+margin_left = 409.0
+margin_right = 709.0
+margin_bottom = 20.0
+value = 1.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+fill_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyPoints" type="Label" parent="Scoreboard/CenterContainer/HBoxContainer"]
+margin_left = 759.0
+margin_right = 768.0
+margin_bottom = 19.0
+theme = ExtResource( 1 )
+text = "1"
+
+[node name="PlayerBoard" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -800.0
+margin_top = -155.0
+margin_right = 798.0
+margin_bottom = -28.0
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserInfo" parent="PlayerBoard" instance=ExtResource( 16 )]
+
+[node name="HealthAndStamina" type="Node2D" parent="PlayerBoard"]
+
+[node name="H&SBackground" type="Sprite" parent="PlayerBoard/HealthAndStamina"]
+position = Vector2( 175.463, 56.1657 )
+scale = Vector2( 0.412072, 1.45269 )
+texture = ExtResource( 6 )
+
+[node name="HP Bar instant" type="TextureProgress" parent="PlayerBoard/HealthAndStamina"]
+margin_left = 110.847
+margin_top = 39.8964
+margin_right = 310.847
+margin_bottom = 59.8964
+rect_scale = Vector2( 1, 0.6 )
+max_value = 120.0
+value = 120.0
+texture_progress = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="Label" parent="PlayerBoard/HealthAndStamina"]
+margin_left = 33.5017
+margin_top = 59.2034
+margin_right = 172.502
+margin_bottom = 78.2034
+theme = ExtResource( 1 )
+text = "Username"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLabel" type="Label" parent="PlayerBoard/HealthAndStamina"]
+margin_left = 33.7047
+margin_top = 37.0418
+margin_right = 102.705
+margin_bottom = 56.0418
+custom_fonts/font = SubResource( 1 )
+text = "120 / 120"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaminaBar" type="TextureProgress" parent="PlayerBoard/HealthAndStamina"]
+margin_left = 111.0
+margin_top = 52.0
+margin_right = 361.0
+margin_bottom = 67.0
+rect_scale = Vector2( 0.8, 0.5 )
+max_value = 5.0
+step = 0.01
+value = 5.0
+texture_progress = ExtResource( 9 )
+tint_under = Color( 1, 1, 1, 0.470588 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeaponStatsBackground" type="Sprite" parent="PlayerBoard"]
+position = Vector2( 1416.35, 68.449 )
+scale = Vector2( 0.172071, 1.85491 )
+texture = ExtResource( 6 )
+
+[node name="WeaponName" type="Label" parent="PlayerBoard"]
+margin_left = 1364.6
+margin_top = 73.0
+margin_right = 1467.6
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 2 )
+text = "AK47"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoLabel" type="Label" parent="PlayerBoard"]
+margin_left = 1363.6
+margin_top = 42.0
+margin_right = 1474.6
+margin_bottom = 78.0001
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "60 / 100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="PlayerBoard"]
+visible = false
+margin_right = 1278.0
+margin_bottom = 132.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FallDamage720P" type="Sprite" parent="PlayerBoard/CenterContainer"]
+position = Vector2( 639.924, -237.215 )
+texture = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerBoard/CenterContainer/FallDamage720P"]
+anims/TakeDamage = SubResource( 4 )
+
+[node name="HitMarker" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hit Marker1" type="Sprite" parent="HitMarker"]
+modulate = Color( 0.533333, 0, 0, 0 )
+position = Vector2( 794.713, 444.443 )
+rotation = 0.801412
+scale = Vector2( 0.451963, 0.3 )
+texture = ExtResource( 7 )
+offset = Vector2( -30, 0 )
+
+[node name="Hit Marker2" type="Sprite" parent="HitMarker"]
+modulate = Color( 0.533333, 0, 0, 0 )
+position = Vector2( 805.316, 455.391 )
+rotation = 0.801412
+scale = Vector2( 0.515, 0.3 )
+texture = ExtResource( 7 )
+offset = Vector2( 30, 0 )
+
+[node name="Hit Marker3" type="Sprite" parent="HitMarker"]
+modulate = Color( 0.533333, 0, 0, 0 )
+position = Vector2( 805.991, 444.558 )
+rotation = 0.801412
+scale = Vector2( 0.3, 0.445118 )
+texture = ExtResource( 13 )
+offset = Vector2( 0, -30 )
+
+[node name="Hit Marker4" type="Sprite" parent="HitMarker"]
+modulate = Color( 0.533333, 0, 0, 0 )
+position = Vector2( 794.557, 455.631 )
+rotation = 0.801412
+scale = Vector2( 0.3, 0.493785 )
+texture = ExtResource( 13 )
+offset = Vector2( 0, 30 )
+
+[node name="HitMarkerPlayer" type="AnimationPlayer" parent="HitMarker"]
+autoplay = "Blank"
+anims/Blank = SubResource( 5 )
+anims/HitMarker = SubResource( 6 )
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu"]
+margin_right = 1281.0
+margin_bottom = 721.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="In_game_menu" type="VBoxContainer" parent="Menu/CenterContainer"]
+margin_left = 585.0
+margin_top = 308.0
+margin_right = 696.0
+margin_bottom = 413.0
+theme = ExtResource( 1 )
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Create_a_class" type="Button" parent="Menu/CenterContainer/In_game_menu"]
+margin_right = 111.0
+margin_bottom = 25.0
+text = "Create a class"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="Menu/CenterContainer/In_game_menu"]
+margin_top = 40.0
+margin_right = 111.0
+margin_bottom = 65.0
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="Menu/CenterContainer/In_game_menu"]
+margin_top = 80.0
+margin_right = 111.0
+margin_bottom = 105.0
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DebugTeam" type="CenterContainer" parent="Menu"]
+anchor_top = 0.182
+anchor_bottom = 1.0
+margin_left = 51.0
+margin_top = 193.72
+margin_right = 261.0
+margin_bottom = 195.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TeamName" type="Label" parent="Menu/DebugTeam"]
+margin_left = 68.0
+margin_top = 10.0
+margin_right = 141.0
+margin_bottom = 24.0
+text = "Team : Null"
+
+[node name="DebugJoiner" type="HBoxContainer" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 0.392
+margin_left = 51.0
+margin_top = 174.0
+margin_right = 220.0
+margin_bottom = 188.32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RedTeam Join" type="Button" parent="Menu/DebugJoiner"]
+margin_right = 100.0
+margin_bottom = 30.0
+text = "Red team Join"
+
+[node name="BlueTeam Join" type="Button" parent="Menu/DebugJoiner"]
+margin_left = 104.0
+margin_right = 209.0
+margin_bottom = 30.0
+text = "Blue team Join"
+
+[node name="Video" type="Control" parent="."]
+visible = false
+margin_top = 1.0
+margin_right = 1279.0
+margin_bottom = 717.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FOV" type="LineEdit" parent="Video"]
+margin_left = 611.0
+margin_top = 338.0
+margin_right = 669.0
+margin_bottom = 362.0
+align = 1
+max_length = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FOV_Slider" type="HSlider" parent="Video"]
+margin_left = 531.804
+margin_top = 366.0
+margin_right = 746.804
+margin_bottom = 382.0
+min_value = 90.0
+max_value = 150.0
+value = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leave" type="Button" parent="Video"]
+margin_left = 618.801
+margin_top = 449.492
+margin_right = 667.801
+margin_bottom = 469.492
+text = "Leave"
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+margin_top = 1.0
+margin_right = 1278.0
+margin_bottom = 723.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leave" type="Button" parent="Settings"]
+anchor_top = 0.677
+anchor_bottom = 0.677
+margin_left = 614.318
+margin_top = -8.92944
+margin_right = 663.318
+margin_bottom = 11.0706
+text = "Leave"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Settings"]
+margin_right = 1281.0
+margin_bottom = 321.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/CenterContainer"]
+margin_left = 442.0
+margin_top = 148.0
+margin_right = 839.0
+margin_bottom = 173.0
+theme = ExtResource( 1 )
+custom_constants/separation = 20
+
+[node name="Controls" type="Button" parent="Settings/CenterContainer/HBoxContainer"]
+margin_right = 71.0
+margin_bottom = 25.0
+text = "Controls"
+
+[node name="Audio" type="Button" parent="Settings/CenterContainer/HBoxContainer"]
+margin_left = 91.0
+margin_right = 144.0
+margin_bottom = 25.0
+text = "Audio"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Video" type="Button" parent="Settings/CenterContainer/HBoxContainer"]
+margin_left = 164.0
+margin_right = 216.0
+margin_bottom = 25.0
+text = "Video"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrossHairCustomizer" type="Button" parent="Settings/CenterContainer/HBoxContainer"]
+margin_left = 236.0
+margin_right = 397.0
+margin_bottom = 25.0
+theme = ExtResource( 1 )
+text = "CrossHairCustomizer"
+
+[node name="CrossHair" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CrossHair"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CrossHair/CenterContainer"]
+margin_left = 800.0
+margin_top = 450.0
+margin_right = 800.0
+margin_bottom = 450.0
+
+[node name="CrossHairAnimatons" type="AnimationPlayer" parent="CrossHair/CenterContainer/CenterContainer"]
+anims/Sprint = SubResource( 7 )
+anims/Static = SubResource( 8 )
+anims/Walking = SubResource( 9 )
+blend_times = [ "Walking", "Static", 0.1, "Walking", "Walking", 0.1 ]
+
+[node name="CrossHairBlender" type="AnimationTree" parent="CrossHair/CenterContainer/CenterContainer"]
+tree_root = SubResource( 14 )
+anim_player = NodePath("../CrossHairAnimatons")
+active = true
+parameters/Crosshair/current = 0
+
+[node name="CrossHairHorizontal1" type="Sprite" parent="CrossHair/CenterContainer/CenterContainer"]
+visible = false
+position = Vector2( 0.42041, 0 )
+scale = Vector2( 1, 0.3 )
+texture = ExtResource( 7 )
+offset = Vector2( -30, 0 )
+
+[node name="CrossHairHorizontal2" type="Sprite" parent="CrossHair/CenterContainer/CenterContainer"]
+visible = false
+position = Vector2( 0.42041, 0 )
+scale = Vector2( 1, 0.3 )
+texture = ExtResource( 7 )
+offset = Vector2( 30, 0 )
+
+[node name="CrossHairVertical1" type="Sprite" parent="CrossHair/CenterContainer/CenterContainer"]
+visible = false
+scale = Vector2( 0.3, 1 )
+texture = ExtResource( 13 )
+offset = Vector2( 0, -30 )
+
+[node name="CrossHairVertical2" type="Sprite" parent="CrossHair/CenterContainer/CenterContainer"]
+visible = false
+scale = Vector2( 0.3, 1 )
+texture = ExtResource( 13 )
+offset = Vector2( 0, 30 )
+
+[node name="Dot" type="Sprite" parent="CrossHair/CenterContainer/CenterContainer"]
+visible = false
+scale = Vector2( 0.3, 0.1 )
+texture = ExtResource( 13 )
+
+[node name="Leaderboard" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Leaderboard"]
+position = Vector2( 638.974, 347.114 )
+scale = Vector2( 0.768429, 12.3378 )
+texture = ExtResource( 6 )
+
+[node name="RedTeamName" type="Label" parent="Leaderboard"]
+margin_left = 560.0
+margin_top = 247.0
+margin_right = 623.0
+margin_bottom = 261.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "Red Team"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlueTeamName" type="Label" parent="Leaderboard"]
+margin_left = 656.0
+margin_top = 247.0
+margin_right = 724.0
+margin_bottom = 261.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0, 0.498039, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0.670588, 1, 1 )
+text = "Blue Team"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Leaderboard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Leaderboard/CenterContainer"]
+margin_left = 684.0
+margin_top = 362.0
+margin_right = 916.0
+margin_bottom = 538.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="RedTeam" type="VBoxContainer" parent="Leaderboard/CenterContainer/HBoxContainer"]
+margin_right = 66.0
+margin_bottom = 176.0
+
+[node name="User1" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/RedTeam"]
+margin_right = 66.0
+margin_bottom = 14.0
+text = "Username"
+
+[node name="User2" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/RedTeam"]
+margin_top = 18.0
+margin_right = 66.0
+margin_bottom = 32.0
+text = "Username"
+
+[node name="User3" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/RedTeam"]
+margin_top = 36.0
+margin_right = 66.0
+margin_bottom = 50.0
+text = "Username"
+
+[node name="User4" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/RedTeam"]
+margin_top = 54.0
+margin_right = 66.0
+margin_bottom = 68.0
+text = "Username"
+
+[node name="User5" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/RedTeam"]
+margin_top = 72.0
+margin_right = 66.0
+margin_bottom = 86.0
+text = "Username"
+
+[node name="User6" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/RedTeam"]
+margin_top = 90.0
+margin_right = 66.0
+margin_bottom = 104.0
+text = "Username"
+
+[node name="User7" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/RedTeam"]
+margin_top = 108.0
+margin_right = 66.0
+margin_bottom = 122.0
+text = "Username"
+
+[node name="User8" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/RedTeam"]
+margin_top = 126.0
+margin_right = 66.0
+margin_bottom = 140.0
+text = "Username"
+
+[node name="User9" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/RedTeam"]
+margin_top = 144.0
+margin_right = 66.0
+margin_bottom = 158.0
+text = "Username"
+
+[node name="User10" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/RedTeam"]
+margin_top = 162.0
+margin_right = 66.0
+margin_bottom = 176.0
+text = "Username"
+
+[node name="BlueTeam" type="VBoxContainer" parent="Leaderboard/CenterContainer/HBoxContainer"]
+margin_left = 166.0
+margin_right = 232.0
+margin_bottom = 176.0
+rect_pivot_offset = Vector2( -677.414, -273 )
+alignment = 2
+
+[node name="User1" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/BlueTeam"]
+margin_right = 66.0
+margin_bottom = 14.0
+text = "Username"
+
+[node name="User2" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/BlueTeam"]
+margin_top = 18.0
+margin_right = 66.0
+margin_bottom = 32.0
+text = "Username"
+
+[node name="User3" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/BlueTeam"]
+margin_top = 36.0
+margin_right = 66.0
+margin_bottom = 50.0
+text = "Username"
+
+[node name="User4" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/BlueTeam"]
+margin_top = 54.0
+margin_right = 66.0
+margin_bottom = 68.0
+text = "Username"
+
+[node name="User5" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/BlueTeam"]
+margin_top = 72.0
+margin_right = 66.0
+margin_bottom = 86.0
+text = "Username"
+
+[node name="User6" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/BlueTeam"]
+margin_top = 90.0
+margin_right = 66.0
+margin_bottom = 104.0
+text = "Username"
+
+[node name="User7" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/BlueTeam"]
+margin_top = 108.0
+margin_right = 66.0
+margin_bottom = 122.0
+text = "Username"
+
+[node name="User8" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/BlueTeam"]
+margin_top = 126.0
+margin_right = 66.0
+margin_bottom = 140.0
+text = "Username"
+
+[node name="User9" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/BlueTeam"]
+margin_top = 144.0
+margin_right = 66.0
+margin_bottom = 158.0
+text = "Username"
+
+[node name="User10" type="Label" parent="Leaderboard/CenterContainer/HBoxContainer/BlueTeam"]
+margin_top = 162.0
+margin_right = 66.0
+margin_bottom = 176.0
+text = "Username"
+
+[node name="FPS_Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+theme = SubResource( 18 )
+custom_colors/font_color = Color( 0.14902, 1, 0, 1 )
+text = "FPS: 000"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Menu/CenterContainer/In_game_menu/Create_a_class" to="." method="_on_Create_a_class_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/In_game_menu/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/In_game_menu/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Menu/DebugJoiner/RedTeam Join" to="PlayerBoard/UserInfo" method="_on_RedTeam_Join_pressed"]
+[connection signal="pressed" from="Menu/DebugJoiner/BlueTeam Join" to="PlayerBoard/UserInfo" method="_on_BlueTeam_Join_pressed"]
+[connection signal="pressed" from="Video/Leave" to="." method="_on_Leave_pressed"]
+[connection signal="pressed" from="Settings/Leave" to="." method="_on_Leave_pressed"]
+[connection signal="pressed" from="Settings/CenterContainer/HBoxContainer/Video" to="." method="_on_Video_pressed"]

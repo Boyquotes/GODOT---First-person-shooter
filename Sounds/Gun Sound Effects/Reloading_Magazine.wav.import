@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Reloading_Magazine.wav-3acb591fea429d657d67834d168dd90c.sample"
+
+[deps]
+
+source_file="res://Sounds/Gun Sound Effects/Reloading_Magazine.wav"
+dest_files=[ "res://.import/Reloading_Magazine.wav-3acb591fea429d657d67834d168dd90c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

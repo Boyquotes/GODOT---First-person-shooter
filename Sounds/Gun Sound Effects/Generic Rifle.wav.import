@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Generic Rifle.wav-67cc7ed3d7fedf17aff171dd59ac6ddc.sample"
+
+[deps]
+
+source_file="res://Sounds/Gun Sound Effects/Generic Rifle.wav"
+dest_files=[ "res://.import/Generic Rifle.wav-67cc7ed3d7fedf17aff171dd59ac6ddc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

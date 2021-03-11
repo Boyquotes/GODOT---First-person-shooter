@@ -1,0 +1,352 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/MainHub.gd" type="Script" id=1]
+[ext_resource path="res://GameTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Models/Maps/MapImages/Map3.png" type="Texture" id=3]
+[ext_resource path="res://Models/Maps/MapImages/Map4.png" type="Texture" id=4]
+[ext_resource path="res://Models/Maps/MapImages/Map1.png" type="Texture" id=5]
+[ext_resource path="res://Models/Maps/MapImages/Map2.png" type="Texture" id=6]
+[ext_resource path="res://Images/GameHUDBackground.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/MenuProfile.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/UserInfo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Models/Maps/MapImages/Map 6.png" type="Texture" id=10]
+[ext_resource path="res://Models/Maps/MapImages/Map 5.png" type="Texture" id=11]
+[ext_resource path="res://Models/Maps/MainMenuWorld/MainMenuRoom.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Fonts/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 13 )
+
+[node name="MainHub" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+map1 = ExtResource( 5 )
+map2 = ExtResource( 6 )
+map3 = ExtResource( 3 )
+map4 = ExtResource( 4 )
+map5 = ExtResource( 11 )
+map6 = ExtResource( 10 )
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+margin_top = 1.0
+margin_right = 1278.0
+margin_bottom = 723.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leave" type="Button" parent="Settings"]
+margin_left = 614.318
+margin_top = 479.865
+margin_right = 663.318
+margin_bottom = 499.865
+text = "Leave"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Settings"]
+margin_right = 1281.0
+margin_bottom = 321.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/CenterContainer"]
+margin_left = 422.0
+margin_top = 148.0
+margin_right = 859.0
+margin_bottom = 173.0
+theme = ExtResource( 2 )
+custom_constants/separation = 30
+
+[node name="Controls" type="Button" parent="Settings/CenterContainer/HBoxContainer"]
+margin_right = 71.0
+margin_bottom = 25.0
+text = "Controls"
+
+[node name="Audio" type="Button" parent="Settings/CenterContainer/HBoxContainer"]
+margin_left = 101.0
+margin_right = 154.0
+margin_bottom = 25.0
+text = "Audio"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GraphicsQuality" type="Button" parent="Settings/CenterContainer/HBoxContainer"]
+margin_left = 184.0
+margin_right = 246.0
+margin_bottom = 25.0
+text = "Quality"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrossHairCustomizer" type="Button" parent="Settings/CenterContainer/HBoxContainer"]
+margin_left = 276.0
+margin_right = 437.0
+margin_bottom = 25.0
+theme = ExtResource( 2 )
+text = "CrossHairCustomizer"
+
+[node name="Main" type="Control" parent="."]
+visible = false
+margin_right = 1282.0
+margin_bottom = 722.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Main"]
+margin_left = 186.0
+margin_top = 211.0
+margin_right = 1279.0
+margin_bottom = 723.0
+theme = ExtResource( 2 )
+use_top_left = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/CenterContainer"]
+margin_left = -61.0
+margin_top = -83.0
+margin_right = 60.0
+margin_bottom = 82.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 2 )
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Multiplayer" type="Button" parent="Main/CenterContainer/VBoxContainer"]
+margin_right = 121.0
+margin_bottom = 25.0
+theme = ExtResource( 2 )
+text = "Multiplayer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Custom Games" type="Button" parent="Main/CenterContainer/VBoxContainer"]
+margin_top = 35.0
+margin_right = 121.0
+margin_bottom = 60.0
+theme = ExtResource( 2 )
+text = "Custom Games"
+
+[node name="Create A Class" type="Button" parent="Main/CenterContainer/VBoxContainer"]
+margin_top = 70.0
+margin_right = 121.0
+margin_bottom = 95.0
+theme = ExtResource( 2 )
+text = "Create A Class"
+
+[node name="Settings" type="Button" parent="Main/CenterContainer/VBoxContainer"]
+margin_top = 105.0
+margin_right = 121.0
+margin_bottom = 130.0
+theme = ExtResource( 2 )
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Main/CenterContainer/VBoxContainer"]
+margin_top = 140.0
+margin_right = 121.0
+margin_bottom = 165.0
+theme = ExtResource( 2 )
+text = "Quit"
+
+[node name="Custom_Games" type="Control" parent="."]
+margin_left = 1.18921
+margin_right = 1279.19
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map_Picture" type="Sprite" parent="Custom_Games"]
+position = Vector2( 852.285, 328.755 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Custom_Games"]
+margin_left = 186.0
+margin_top = 211.0
+margin_right = 1279.0
+margin_bottom = 723.0
+theme = ExtResource( 2 )
+use_top_left = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Custom_Games/CenterContainer"]
+margin_left = -53.0
+margin_top = -65.0
+margin_right = 53.0
+margin_bottom = 65.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 2 )
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Play" type="Button" parent="Custom_Games/CenterContainer/VBoxContainer"]
+margin_right = 106.0
+margin_bottom = 25.0
+theme = ExtResource( 2 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Custom_Games" type="OptionButton" parent="Custom_Games/CenterContainer/VBoxContainer"]
+margin_top = 35.0
+margin_right = 106.0
+margin_bottom = 60.0
+theme = ExtResource( 2 )
+text = "Map 1"
+items = [ "Map 1", null, false, 0, null, "Map 2", null, false, 1, null, "Map 3", null, false, 2, null, "Map 4", null, false, 3, null, "Map 5", null, false, 4, null, "Map 6", null, false, 5, null ]
+selected = 0
+
+[node name="Map Settings" type="Button" parent="Custom_Games/CenterContainer/VBoxContainer"]
+margin_top = 70.0
+margin_right = 106.0
+margin_bottom = 95.0
+theme = ExtResource( 2 )
+text = "Map Settings"
+
+[node name="Leave" type="Button" parent="Custom_Games/CenterContainer/VBoxContainer"]
+margin_top = 105.0
+margin_right = 106.0
+margin_bottom = 130.0
+theme = ExtResource( 2 )
+text = "Leave"
+
+[node name="MenuProfile" type="Control" parent="."]
+visible = false
+margin_left = 1021.0
+margin_right = 1280.0
+margin_bottom = 113.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserInfo" parent="MenuProfile" instance=ExtResource( 9 )]
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuProfile"]
+margin_left = -25.0
+margin_right = 256.0
+margin_bottom = 92.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="MenuProfile/CenterContainer"]
+position = Vector2( 139.724, 46.2493 )
+scale = Vector2( 0.408054, 3.13027 )
+texture = ExtResource( 7 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuProfile/CenterContainer"]
+margin_left = 105.0
+margin_top = 25.0
+margin_right = 175.0
+margin_bottom = 67.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="Label" parent="MenuProfile/CenterContainer/VBoxContainer"]
+margin_right = 70.0
+margin_bottom = 19.0
+theme = ExtResource( 2 )
+text = "username"
+
+[node name="Level" type="Label" parent="MenuProfile/CenterContainer/VBoxContainer"]
+margin_top = 23.0
+margin_right = 70.0
+margin_bottom = 42.0
+theme = ExtResource( 2 )
+text = "Level"
+
+[node name="MainMenuRoom" parent="." instance=ExtResource( 12 )]
+
+[node name="Create_A_Class" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Create_A_Class"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 348.0
+margin_right = 1279.0
+margin_bottom = 719.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Create_A_Class/CenterContainer"]
+margin_left = 527.0
+margin_top = 175.0
+margin_right = 751.0
+margin_bottom = 195.0
+custom_constants/separation = 20
+
+[node name="Back" type="Button" parent="Create_A_Class/CenterContainer/HBoxContainer"]
+margin_right = 42.0
+margin_bottom = 20.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back_to_menu" type="Button" parent="Create_A_Class/CenterContainer/HBoxContainer"]
+margin_left = 62.0
+margin_right = 162.0
+margin_bottom = 20.0
+text = "Back to menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="Button" parent="Create_A_Class/CenterContainer/HBoxContainer"]
+margin_left = 182.0
+margin_right = 224.0
+margin_bottom = 20.0
+text = "Next"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1057.86
+margin_top = 625.568
+margin_right = 1168.86
+margin_bottom = 672.568
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Version 2.2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Settings/Leave" to="." method="_on_Leave_pressed"]
+[connection signal="pressed" from="Main/CenterContainer/VBoxContainer/Multiplayer" to="." method="_on_Multiplayer_pressed"]
+[connection signal="pressed" from="Main/CenterContainer/VBoxContainer/Custom Games" to="." method="_on_Custom_Games_pressed"]
+[connection signal="pressed" from="Main/CenterContainer/VBoxContainer/Create A Class" to="." method="_on_Create_A_Class_pressed"]
+[connection signal="pressed" from="Main/CenterContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Main/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Custom_Games/CenterContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Custom_Games/CenterContainer/VBoxContainer/Leave" to="." method="_on_Leave_pressed"]
+[connection signal="pressed" from="Create_A_Class/CenterContainer/HBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Create_A_Class/CenterContainer/HBoxContainer/Back_to_menu" to="." method="_on_Back_to_menu_pressed"]
+[connection signal="pressed" from="Create_A_Class/CenterContainer/HBoxContainer/Next" to="." method="_on_Next_pressed"]
+
+[editable path="MainMenuRoom"]

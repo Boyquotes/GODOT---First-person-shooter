@@ -1,0 +1,163 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/FootstepsSound.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/Footsteps/footstep1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/Footsteps/footstep10.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Footsteps/footstep2.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/Footsteps/footstep3.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/GameHUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sounds/Footsteps/footstep8.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/Footsteps/footstep5.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/Footsteps/footstep7.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/Footsteps/footstep4.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/Footsteps/footstep9.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/Footsteps/footstep6.wav" type="AudioStream" id=13]
+[ext_resource path="res://Scenes/Hand.gd" type="Script" id=14]
+[ext_resource path="res://Models/Weapons/AK47/AK47.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Models/Weapons/Glock18/Glock18.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Sounds/Gun Sound Effects/Hit Marker.wav" type="AudioStream" id=20]
+[ext_resource path="res://Models/Weapons/AWP/AWP.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Models/Weapons/Glock18/Glock18.gd" type="Script" id=22]
+[ext_resource path="res://Models/Weapons/Vector/Vector.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Models/Weapons/P99/P99.gltf" type="PackedScene" id=25]
+[ext_resource path="res://Sounds/Gun Sound Effects/Reloading_Magazine.wav" type="AudioStream" id=26]
+[ext_resource path="res://Models/Weapons/AA12/AA12.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Models/Weapons/Mac10/Mac10.gltf" type="PackedScene" id=28]
+[ext_resource path="res://Models/Weapons/USP/USP.gltf" type="PackedScene" id=29]
+[ext_resource path="res://Models/Weapons/AS Val/AS VAL.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Models/Weapons/Mac10/Mac10.gd" type="Script" id=32]
+[ext_resource path="res://Models/Weapons/P99/P99.gd" type="Script" id=33]
+[ext_resource path="res://Models/Weapons/USP/USP.gd" type="Script" id=34]
+
+[sub_resource type="CapsuleMesh" id=1]
+mid_height = 3.0
+
+[sub_resource type="CapsuleShape" id=2]
+height = 3.00082
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("Head/Hand/AWP/Viewport")
+
+[sub_resource type="SpatialMaterial" id=4]
+resource_local_to_scene = true
+albedo_texture = SubResource( 3 )
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="."]
+transform = Transform( 0.8, 0, 0, 0, -1.30337e-07, -1, 0, 0.8, -1.62921e-07, 0, 1.79684, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="BodyCollision" type="CollisionShape" parent="."]
+transform = Transform( 0.799999, 0, 0, 0, -1.30337e-07, -1, 0, 0.799999, -1.62921e-07, -0.00697398, 1.7944, 0.00788498 )
+shape = SubResource( 2 )
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8223, 0 )
+
+[node name="Camera" type="Camera" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.710323 )
+current = true
+fov = 100.0
+near = 0.04
+far = 800.0
+
+[node name="GunLine" type="RayCast" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.224 )
+enabled = true
+cast_to = Vector3( 0, 0, -200 )
+
+[node name="Hand" type="Spatial" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.066, -0.193, -0.538 )
+script = ExtResource( 14 )
+default_pos = Vector3( 0.399, -0.255, -1.452 )
+aim_pos = Vector3( 0.066, -0.193, -0.538 )
+sway_left = Vector3( 0, 0.1, 0 )
+sway_right = Vector3( 0, -0.1, 0 )
+
+[node name="AK47" parent="Head/Hand" instance=ExtResource( 15 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.066, -1.217, -0.483 )
+visible = false
+
+[node name="Reload" type="AudioStreamPlayer" parent="Head/Hand/AK47"]
+stream = ExtResource( 26 )
+
+[node name="AS VAL" parent="Head/Hand" instance=ExtResource( 30 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.011, -0.183, -0.379 )
+
+[node name="Glock18" parent="Head/Hand" instance=ExtResource( 16 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.046, -0.506, -0.711 )
+visible = false
+script = ExtResource( 22 )
+
+[node name="AWP" parent="Head/Hand" instance=ExtResource( 21 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.071, -0.187, -1.68953 )
+visible = false
+
+[node name="Scope" parent="Head/Hand/AWP/Armature/Skeleton" index="1"]
+material/0 = SubResource( 4 )
+
+[node name="Camera" parent="Head/Hand/AWP/Viewport" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00500012, 3.81922, -2.93681 )
+far = 600.0
+
+[node name="Reload" type="AudioStreamPlayer" parent="Head/Hand/AWP"]
+stream = ExtResource( 26 )
+
+[node name="Vector" parent="Head/Hand" instance=ExtResource( 24 )]
+transform = Transform( -3.25841e-08, 0, 0.2, 0, 0.2, 0, -0.2, 0, -3.25841e-08, -0.066, -0.103, -0.556 )
+visible = false
+
+[node name="AA12" parent="Head/Hand" instance=ExtResource( 27 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.066, -0.653, -0.625 )
+visible = false
+
+[node name="P99" parent="Head/Hand" instance=ExtResource( 25 )]
+transform = Transform( -1.62921e-08, 0, 0.1, 0, 0.1, 0, -0.1, 0, -1.62921e-08, 0.05, -0.13, -0.854 )
+visible = false
+script = ExtResource( 33 )
+
+[node name="USP" parent="Head/Hand" instance=ExtResource( 29 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.066, 0.0600395, -0.566336 )
+visible = false
+script = ExtResource( 34 )
+
+[node name="Mac10" parent="Head/Hand" instance=ExtResource( 28 )]
+transform = Transform( -8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, -0.462, -0.543, -0.938 )
+visible = false
+script = ExtResource( 32 )
+
+[node name="GameHUD" parent="." instance=ExtResource( 7 )]
+
+[node name="CrossHairAnimatons" parent="GameHUD/CrossHair/CenterContainer/CenterContainer" index="0"]
+blend_times = [ "Walking", "Static", 0.1, "Walking", "Walking", 0.1 ]
+
+[node name="FootstepsSound" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.549619, -0.740169 )
+script = ExtResource( 2 )
+footstep_sound1 = ExtResource( 3 )
+footstep_sound2 = ExtResource( 5 )
+footstep_sound3 = ExtResource( 6 )
+footstep_sound4 = ExtResource( 11 )
+footstep_sound5 = ExtResource( 9 )
+footstep_sound6 = ExtResource( 13 )
+footstep_sound7 = ExtResource( 10 )
+footstep_sound8 = ExtResource( 8 )
+footstep_sound9 = ExtResource( 12 )
+footstep_sound10 = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="FootstepsSound"]
+wait_time = 0.4
+one_shot = true
+
+[node name="HitMarker" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+
+[editable path="Head/Hand/AK47"]
+
+[editable path="Head/Hand/AWP"]
+
+[editable path="GameHUD"]
