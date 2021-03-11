@@ -1,0 +1,830 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://1111.tres" type="Theme" id=1]
+[ext_resource path="res://Images/ButtonPressed.png" type="Texture" id=2]
+[ext_resource path="res://Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Images/Button.png" type="Texture" id=4]
+[ext_resource path="res://MenuRoot.gd" type="Script" id=5]
+[ext_resource path="res://Images/TeamColour.exr" type="Texture" id=6]
+[ext_resource path="res://Emblem/Emblem_6.png" type="Texture" id=7]
+[ext_resource path="res://Emblem/Emblem_2.png" type="Texture" id=8]
+[ext_resource path="res://Emblem/Emblem_4.png" type="Texture" id=9]
+[ext_resource path="res://Emblem/Emblem_5.png" type="Texture" id=10]
+[ext_resource path="res://Emblem/Emblem_1.png" type="Texture" id=11]
+[ext_resource path="res://Emblem/Emblem_8.png" type="Texture" id=12]
+[ext_resource path="res://Emblem/Emblem_3.png" type="Texture" id=13]
+[ext_resource path="res://Emblem/Emblem_7.png" type="Texture" id=14]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.521569, 0.14902, 0, 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 1
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=7]
+default_font = SubResource( 6 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.129412, 0.180392, 0.996078, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 25
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 1
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=12]
+default_font = SubResource( 11 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.129412, 0.180392, 0.996078, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 8 )
+Button/styles/normal = SubResource( 9 )
+Button/styles/pressed = SubResource( 10 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 150, 30 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 22
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 1
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=20]
+default_font = SubResource( 19 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.129412, 0.180392, 0.996078, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 13 )
+Button/styles/normal = SubResource( 14 )
+Button/styles/pressed = SubResource( 15 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = null
+OptionButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+OptionButton/colors/font_color_hover = Color( 0.129412, 0.180392, 0.996078, 1 )
+OptionButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+OptionButton/constants/arrow_margin = 2
+OptionButton/constants/hseparation = 2
+OptionButton/fonts/font = null
+OptionButton/icons/arrow = null
+OptionButton/styles/disabled = null
+OptionButton/styles/focus = null
+OptionButton/styles/hover = SubResource( 16 )
+OptionButton/styles/normal = SubResource( 17 )
+OptionButton/styles/pressed = SubResource( 18 )
+
+[node name="MenuWorld" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 6.48582, 0, 0, 0, 0.0970495, 0, 0, 0, 6.28324, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="MeshInstance"]
+transform = Transform( 0.21351, 0, 0, 0, 6.64518, 7.87493, 0, -0.121634, 0.10264, 0, 33.9836, 0.182837 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.916935, 0.399037, 0, -0.399037, 0.916935, 0, 1.66055, 3.03192 )
+
+[node name="MenuLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuRoot" type="Control" parent="MenuLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="MenuLayer/MenuRoot"]
+
+[node name="MainMenu" type="MarginContainer" parent="MenuLayer/MenuRoot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuLayer/MenuRoot/MainMenu"]
+margin_right = 1600.0
+margin_bottom = 900.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/MenuRoot/MainMenu/CenterContainer"]
+margin_left = 600.0
+margin_top = 295.0
+margin_right = 1000.0
+margin_bottom = 605.0
+rect_min_size = Vector2( 400, 300 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 1 )
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Multiplayer" type="Button" parent="MenuLayer/MenuRoot/MainMenu/CenterContainer/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 155, 30 )
+text = "Multiplayer"
+
+[node name="Custom Games" type="Button" parent="MenuLayer/MenuRoot/MainMenu/CenterContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 400.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 155, 30 )
+text = "Custom Games"
+
+[node name="Create a class" type="Button" parent="MenuLayer/MenuRoot/MainMenu/CenterContainer/VBoxContainer"]
+margin_top = 136.0
+margin_right = 400.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 150, 30 )
+text = "Create A Class"
+
+[node name="Settings" type="Button" parent="MenuLayer/MenuRoot/MainMenu/CenterContainer/VBoxContainer"]
+margin_top = 204.0
+margin_right = 400.0
+margin_bottom = 242.0
+rect_min_size = Vector2( 150, 30 )
+text = "Settings"
+
+[node name="Quit" type="Button" parent="MenuLayer/MenuRoot/MainMenu/CenterContainer/VBoxContainer"]
+margin_top = 272.0
+margin_right = 400.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 150, 30 )
+text = "Quit"
+
+[node name="Custom Classes" type="Control" parent="MenuLayer/MenuRoot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1600.0
+margin_right = 1600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/MenuRoot/Custom Classes"]
+margin_left = 100.0
+margin_top = 250.0
+margin_right = 500.0
+margin_bottom = 657.0
+rect_min_size = Vector2( 400, 300 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Create A Class" type="Label" parent="MenuLayer/MenuRoot/Custom Classes/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 150, 30 )
+theme = SubResource( 7 )
+text = "Create A Class"
+align = 1
+valign = 1
+
+[node name="Class1" type="Button" parent="MenuLayer/MenuRoot/Custom Classes/VBoxContainer"]
+margin_top = 51.0
+margin_right = 400.0
+margin_bottom = 82.0
+theme = SubResource( 12 )
+text = "Custom Class 1"
+
+[node name="Class2" type="Button" parent="MenuLayer/MenuRoot/Custom Classes/VBoxContainer"]
+margin_top = 97.0
+margin_right = 400.0
+margin_bottom = 128.0
+theme = SubResource( 12 )
+text = "Custom Class 2"
+
+[node name="Class3" type="Button" parent="MenuLayer/MenuRoot/Custom Classes/VBoxContainer"]
+margin_top = 143.0
+margin_right = 400.0
+margin_bottom = 174.0
+theme = SubResource( 12 )
+text = "Custom Class 3"
+
+[node name="Class4" type="Button" parent="MenuLayer/MenuRoot/Custom Classes/VBoxContainer"]
+margin_top = 189.0
+margin_right = 400.0
+margin_bottom = 220.0
+theme = SubResource( 12 )
+text = "Custom Class 4"
+
+[node name="Class5" type="Button" parent="MenuLayer/MenuRoot/Custom Classes/VBoxContainer"]
+margin_top = 235.0
+margin_right = 400.0
+margin_bottom = 266.0
+theme = SubResource( 12 )
+text = "Custom Class 5"
+
+[node name="Class6" type="Button" parent="MenuLayer/MenuRoot/Custom Classes/VBoxContainer"]
+margin_top = 281.0
+margin_right = 400.0
+margin_bottom = 312.0
+theme = SubResource( 12 )
+text = "Custom Class 6"
+
+[node name="Back" type="Button" parent="MenuLayer/MenuRoot/Custom Classes/VBoxContainer"]
+margin_top = 327.0
+margin_right = 400.0
+margin_bottom = 365.0
+rect_min_size = Vector2( 150, 30 )
+theme = ExtResource( 1 )
+text = "Back Button"
+
+[node name="Settings" type="Control" parent="MenuLayer/MenuRoot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3200.0
+margin_right = 3200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="MenuLayer/MenuRoot/Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="MenuLayer/MenuRoot/Settings/CenterContainer2"]
+margin_left = 400.0
+margin_top = 225.0
+margin_right = 1200.0
+margin_bottom = 675.0
+rect_min_size = Vector2( 800, 450 )
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="General" type="Control" parent="MenuLayer/MenuRoot/Settings/CenterContainer2/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 48.0
+
+[node name="Button" type="Button" parent="MenuLayer/MenuRoot/Settings/CenterContainer2/TabContainer/General"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Fov"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Video" type="Control" parent="MenuLayer/MenuRoot/Settings/CenterContainer2/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 48.0
+
+[node name="Button" type="Button" parent="MenuLayer/MenuRoot/Settings/CenterContainer2/TabContainer/Video"]
+margin_right = 38.0
+margin_bottom = 20.0
+text = "Resolution"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="Control" parent="MenuLayer/MenuRoot/Settings/CenterContainer2/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 48.0
+
+[node name="Button" type="Button" parent="MenuLayer/MenuRoot/Settings/CenterContainer2/TabContainer/Audio"]
+margin_right = 51.0
+margin_bottom = 20.0
+text = "Sound"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="MenuLayer/MenuRoot/Settings"]
+margin_left = 707.0
+margin_top = 750.0
+margin_right = 892.0
+margin_bottom = 788.0
+rect_min_size = Vector2( 150, 30 )
+theme = ExtResource( 1 )
+text = "Back Button"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CustomGames" type="Control" parent="MenuLayer/MenuRoot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4800.0
+margin_right = 4800.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuLayer/MenuRoot/CustomGames"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.5874
+margin_right = -738.0
+margin_bottom = 1.5874
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Splitter" type="HBoxContainer" parent="MenuLayer/MenuRoot/CustomGames/CenterContainer"]
+margin_left = 233.0
+margin_top = 410.0
+margin_right = 629.0
+margin_bottom = 490.0
+custom_constants/separation = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/MenuRoot/CustomGames/CenterContainer/Splitter"]
+margin_right = 181.0
+margin_bottom = 80.0
+
+[node name="Play" type="Button" parent="MenuLayer/MenuRoot/CustomGames/CenterContainer/Splitter/VBoxContainer"]
+margin_right = 181.0
+margin_bottom = 38.0
+text = "Play"
+
+[node name="Label" type="Label" parent="MenuLayer/MenuRoot/CustomGames/CenterContainer/Splitter/VBoxContainer"]
+margin_top = 42.0
+margin_right = 181.0
+margin_bottom = 80.0
+text = "Game Mode"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuLayer/MenuRoot/CustomGames/CenterContainer/Splitter"]
+margin_left = 211.0
+margin_right = 396.0
+margin_bottom = 80.0
+
+[node name="OptionButton" type="OptionButton" parent="MenuLayer/MenuRoot/CustomGames/CenterContainer/Splitter/VBoxContainer2"]
+margin_right = 185.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 185, 38 )
+text = "Map 1"
+items = [ "Map 1", null, false, 0, null, "Map 2", null, false, 1, null, "Map 3", null, false, 2, null, "Map 4", null, false, 3, null, "Map 5", null, false, 4, null, "Map 6", null, false, 5, null, "Map 7", null, false, 6, null ]
+selected = 0
+
+[node name="GameMode" type="OptionButton" parent="MenuLayer/MenuRoot/CustomGames/CenterContainer/Splitter/VBoxContainer2"]
+margin_top = 42.0
+margin_right = 185.0
+margin_bottom = 80.0
+text = "Free for all"
+items = [ "Free for all", null, false, 0, null, "TDM", null, false, 1, null, "Gun Game", null, false, 2, null, "Infected", null, false, 3, null, "Forces", null, false, 4, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="MenuLayer/MenuRoot/CustomGames"]
+margin_left = 231.0
+margin_top = 800.0
+margin_right = 416.0
+margin_bottom = 838.0
+rect_min_size = Vector2( 150, 30 )
+theme = ExtResource( 1 )
+text = "Back Button"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TeamColour" type="Sprite" parent="MenuLayer/MenuRoot/CustomGames"]
+position = Vector2( 1350, 471.546 )
+scale = Vector2( 1.90714, 1.15082 )
+texture = ExtResource( 6 )
+
+[node name="Blue_Lobby" type="VBoxContainer" parent="MenuLayer/MenuRoot/CustomGames"]
+margin_left = 1160.0
+margin_top = 300.0
+margin_right = 1341.0
+margin_bottom = 646.0
+theme = SubResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LobbySlot" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Blue_Lobby"]
+margin_right = 181.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot2" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Blue_Lobby"]
+margin_top = 35.0
+margin_right = 181.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot3" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Blue_Lobby"]
+margin_top = 70.0
+margin_right = 181.0
+margin_bottom = 101.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot4" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Blue_Lobby"]
+margin_top = 105.0
+margin_right = 181.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot5" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Blue_Lobby"]
+margin_top = 140.0
+margin_right = 181.0
+margin_bottom = 171.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot6" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Blue_Lobby"]
+margin_top = 175.0
+margin_right = 181.0
+margin_bottom = 206.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot7" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Blue_Lobby"]
+margin_top = 210.0
+margin_right = 181.0
+margin_bottom = 241.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot8" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Blue_Lobby"]
+margin_top = 245.0
+margin_right = 181.0
+margin_bottom = 276.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot9" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Blue_Lobby"]
+margin_top = 280.0
+margin_right = 181.0
+margin_bottom = 311.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot10" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Blue_Lobby"]
+margin_top = 315.0
+margin_right = 181.0
+margin_bottom = 346.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="Red_Lobby" type="VBoxContainer" parent="MenuLayer/MenuRoot/CustomGames"]
+margin_left = 1359.0
+margin_top = 300.0
+margin_right = 1540.0
+margin_bottom = 646.0
+theme = SubResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LobbySlot" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Red_Lobby"]
+margin_right = 181.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot2" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Red_Lobby"]
+margin_top = 35.0
+margin_right = 181.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot3" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Red_Lobby"]
+margin_top = 70.0
+margin_right = 181.0
+margin_bottom = 101.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot4" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Red_Lobby"]
+margin_top = 105.0
+margin_right = 181.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot5" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Red_Lobby"]
+margin_top = 140.0
+margin_right = 181.0
+margin_bottom = 171.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot6" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Red_Lobby"]
+margin_top = 175.0
+margin_right = 181.0
+margin_bottom = 206.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot7" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Red_Lobby"]
+margin_top = 210.0
+margin_right = 181.0
+margin_bottom = 241.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot8" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Red_Lobby"]
+margin_top = 245.0
+margin_right = 181.0
+margin_bottom = 276.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot9" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Red_Lobby"]
+margin_top = 280.0
+margin_right = 181.0
+margin_bottom = 311.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="LobbySlot10" type="Label" parent="MenuLayer/MenuRoot/CustomGames/Red_Lobby"]
+margin_top = 315.0
+margin_right = 181.0
+margin_bottom = 346.0
+rect_min_size = Vector2( 181, 31 )
+text = "Empty"
+align = 1
+valign = 1
+
+[node name="Multiplayer" type="Control" parent="MenuLayer/MenuRoot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6400.0
+margin_right = 6400.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuLayer/MenuRoot/Multiplayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer"]
+margin_left = 400.0
+margin_top = 225.0
+margin_right = 1200.0
+margin_bottom = 675.0
+rect_min_size = Vector2( 800, 450 )
+custom_constants/hseparation = 50
+
+[node name="Browser" type="Control" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 48.0
+
+[node name="Create a class" type="Control" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 48.0
+
+[node name="Profile" type="Control" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 48.0
+
+[node name="Emblem" type="Control" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 48.0
+
+[node name="Emblem1" type="TextureButton" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer/Emblem"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.08, 0.08 )
+texture_normal = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Emblem2" type="TextureButton" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer/Emblem"]
+margin_left = 77.7812
+margin_right = 1101.78
+margin_bottom = 1024.0
+rect_scale = Vector2( 0.08, 0.08 )
+texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Emblem3" type="TextureButton" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer/Emblem"]
+margin_left = 150.562
+margin_right = 190.562
+margin_bottom = 40.0
+rect_scale = Vector2( 0.08, 0.08 )
+texture_normal = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Emblem4" type="TextureButton" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer/Emblem"]
+margin_left = 234.523
+margin_top = 1.02246
+margin_right = 1258.52
+margin_bottom = 1025.02
+rect_scale = Vector2( 0.08, 0.08 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Emblem5" type="TextureButton" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer/Emblem"]
+margin_left = 317.188
+margin_top = 0.565186
+margin_right = 1341.19
+margin_bottom = 1024.57
+rect_scale = Vector2( 0.08, 0.08 )
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Emblem6" type="TextureButton" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer/Emblem"]
+margin_left = 401.562
+margin_top = 1.49219
+margin_right = 1425.56
+margin_bottom = 1025.49
+rect_scale = Vector2( 0.08, 0.08 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Emblem7" type="TextureButton" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer/Emblem"]
+margin_left = 487.266
+margin_top = 0.0209961
+margin_right = 1511.27
+margin_bottom = 1024.02
+rect_scale = Vector2( 0.08, 0.08 )
+texture_normal = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Emblem8" type="TextureButton" parent="MenuLayer/MenuRoot/Multiplayer/CenterContainer/TabContainer/Emblem"]
+margin_left = 570.305
+margin_right = 1594.3
+margin_bottom = 1024.0
+rect_scale = Vector2( 0.08, 0.08 )
+texture_normal = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="MenuLayer/MenuRoot/Multiplayer"]
+margin_left = 707.0
+margin_top = 700.0
+margin_right = 892.0
+margin_bottom = 738.0
+rect_min_size = Vector2( 150, 30 )
+theme = ExtResource( 1 )
+text = "Back Button"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MenuLayer/MenuRoot/MainMenu/CenterContainer/VBoxContainer/Multiplayer" to="MenuLayer/MenuRoot" method="_on_Multiplayer_pressed"]
+[connection signal="pressed" from="MenuLayer/MenuRoot/MainMenu/CenterContainer/VBoxContainer/Custom Games" to="MenuLayer/MenuRoot" method="_on_Custom_Games_pressed"]
+[connection signal="pressed" from="MenuLayer/MenuRoot/MainMenu/CenterContainer/VBoxContainer/Create a class" to="MenuLayer/MenuRoot" method="_on_Create_a_class_pressed"]
+[connection signal="pressed" from="MenuLayer/MenuRoot/MainMenu/CenterContainer/VBoxContainer/Settings" to="MenuLayer/MenuRoot" method="_on_Settings_pressed"]
+[connection signal="pressed" from="MenuLayer/MenuRoot/MainMenu/CenterContainer/VBoxContainer/Quit" to="MenuLayer/MenuRoot" method="_on_Quit_pressed"]
+[connection signal="pressed" from="MenuLayer/MenuRoot/Custom Classes/VBoxContainer/Back" to="MenuLayer/MenuRoot" method="_on_Back_pressed"]
+[connection signal="pressed" from="MenuLayer/MenuRoot/Settings/Back" to="MenuLayer/MenuRoot" method="_on_Back_pressed"]
+[connection signal="pressed" from="MenuLayer/MenuRoot/CustomGames/Back" to="MenuLayer/MenuRoot" method="_on_Back_pressed"]
+[connection signal="pressed" from="MenuLayer/MenuRoot/Multiplayer/Back" to="MenuLayer/MenuRoot" method="_on_Back_pressed"]
